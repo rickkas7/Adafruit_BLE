@@ -26,12 +26,13 @@ Sample connections as configured in the atcommand.ino sample file:
 
 You can use the SPI1 hardware SPI port if you prefer.
 
-
+Adafruit Project: 
+https://learn.adafruit.com/introducing-the-adafruit-bluefruit-spi-breakout/introduction
 
 The latest version of this library for Particle here:
 https://github.com/rickkas7/Adafruit_BLE
 
-Original source:
+Original source including additional example programs (not ported):
 https://github.com/adafruit/Adafruit_BluefruitLE_nRF51
 
 Fork of the source for easy change merging is here:
