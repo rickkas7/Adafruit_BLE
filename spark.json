@@ -1,0 +1,7 @@
+{
+    "name": "Adafruit_BLE",
+    "version": "0.0.1",
+    "author": "Rick Kaseguma <rickkas7@rickk.com>",
+    "license": "BSD",
+    "description": "Particle port of Adafruit BlueFruitLE nRF51 Bluetooth LE library"
+}
