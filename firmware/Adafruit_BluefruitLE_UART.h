@@ -63,7 +63,7 @@ class Adafruit_BluefruitLE_UART : public Adafruit_BLE
 
   public:
     // Software Serial Constructor (0, 1, 2, or 3 pins)
-    Adafruit_BluefruitLE_UART(HardwareSerial &port,
+    Adafruit_BluefruitLE_UART(HardwareSerial *port,
 		      int8_t mode_pin = -1, 
 		      int8_t cts_pin = -1, 
 		      int8_t rts_pin = -1);

@@ -40,8 +40,8 @@
     @brief Instantiates a new instance of the Adafruit_BluefruitLE_UART class
 */
 /******************************************************************************/
-Adafruit_BluefruitLE_UART::Adafruit_BluefruitLE_UART(HardwareSerial &port, int8_t mode_pin, int8_t cts_pin, int8_t rts_pin) :
-  _cts_pin(cts_pin), _rts_pin(rts_pin), _mode_pin(mode_pin)
+Adafruit_BluefruitLE_UART::Adafruit_BluefruitLE_UART(HardwareSerial *port, int8_t mode_pin, int8_t cts_pin, int8_t rts_pin) :
+  _mode_pin(mode_pin), _rts_pin(rts_pin), _cts_pin(cts_pin)
 {
   _physical_transport = BLUEFRUIT_TRANSPORT_HWUART;
 
@@ -49,8 +49,8 @@ Adafruit_BluefruitLE_UART::Adafruit_BluefruitLE_UART(HardwareSerial &port, int8_
   ss = 0;
 #endif
 
-  hs = &port;
-  mySerial = &port;
+  hs = port;
+  mySerial = port;
 }
 
 #if SOFTWARE_SERIAL_AVAILABLE
@@ -61,7 +61,7 @@ Adafruit_BluefruitLE_UART::Adafruit_BluefruitLE_UART(HardwareSerial &port, int8_
 */
 /******************************************************************************/
 Adafruit_BluefruitLE_UART::Adafruit_BluefruitLE_UART(SoftwareSerial &port, int8_t mode_pin, int8_t cts_pin, int8_t rts_pin) :
-  _cts_pin(cts_pin), _rts_pin(rts_pin), _mode_pin(mode_pin)
+  _mode_pin(mode_pin), _rts_pin(rts_pin), _cts_pin(cts_pin)
 {
   _physical_transport = BLUEFRUIT_TRANSPORT_SWUART;
 
@@ -231,7 +231,7 @@ size_t Adafruit_BluefruitLE_UART::write(uint8_t c)
 /******************************************************************************/
 int Adafruit_BluefruitLE_UART::available(void)
 {
-  if (!  mySerial->available() & (_cts_pin > 0)) {
+  if (!mySerial->available() && (_cts_pin >= 0)) {
     // toggle flow control to get more byteses
     digitalWrite(_cts_pin, LOW);
     delay(1);
