@@ -36,7 +36,7 @@
 #ifndef _ADAFRUIT_BLE_SPI_H_
 #define _ADAFRUIT_BLE_SPI_H_
 
-#include "Adafruit_BLE/Adafruit_BLE.h"
+#include "Adafruit_BLE.h"
 #include "Adafruit_FIFO.h"
 
 #define SPI_CS_ENABLE()           digitalWrite(m_cs_pin, LOW)
