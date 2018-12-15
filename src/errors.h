@@ -193,7 +193,7 @@ typedef enum
     ERROR_BLEGATTS_INVALID_ATTR_TYPE              = 0x3400,   ///< Invalid attribute type.
     ERROR_BLEGATTS_SYS_ATTR_MISSING               = 0x3401,   ///< System Attributes missing.
   /*=======================================================================*/
-} err_t;
+} adafruit_ble_err_t;
 
 #ifdef __cplusplus
 }

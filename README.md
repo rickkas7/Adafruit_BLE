@@ -78,5 +78,9 @@ Original source including additional example programs (not ported):
 Fork of the source for easy change merging is here: 
 [https://github.com/rickkas7/Adafruit_BluefruitLE_nRF51] (https://github.com/rickkas7/Adafruit_BluefruitLE_nRF51)
 
+## Updates
+
+Version 0.0.3 - Fixed compatibility with mesh devices (Argon, Boron, Xenon) due to redeclaration of err_t.
+
 
 
